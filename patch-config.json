@@ -1,0 +1,28 @@
+{
+  "patch_list": [
+    { "app_name": "tiktok", "source": "revanced" },
+    { "app_name": "youtube", "source": "revanced" },
+    { "app_name": "youtube-music", "source": "revanced" },
+    { "app_name": "reddit", "source": "revanced-extended" },
+    { "app_name": "x", "source": "revanced" },
+    { "app_name": "soundcloud", "source": "revanced" },
+    { "app_name": "google-photos", "source": "revanced" },
+    { "app_name": "disney-plus", "source": "revanced" },
+    { "app_name": "facebook", "source": "revanced" },
+    { "app_name": "duolingo", "source": "revanced" },
+    { "app_name": "google-news", "source": "revanced" },
+    { "app_name": "messenger", "source": "revanced" },
+    { "app_name": "lightroom", "source": "revanced" },
+    { "app_name": "photomath", "source": "revanced" },
+    { "app_name": "pixiv", "source": "revanced" },
+    { "app_name": "prime-video", "source": "revanced" },
+    { "app_name": "proton-mail", "source": "revanced" },
+    { "app_name": "proton-vpn", "source": "revanced" },
+    { "app_name": "rar", "source": "revanced" },
+    { "app_name": "strava", "source": "revanced" },
+    { "app_name": "tumblr", "source": "revanced" },
+    { "app_name": "viber", "source": "revanced" },
+    { "app_name": "threads", "source": "revanced"},
+    { "app_name": "crunchyroll", "source": "revanced" }
+  ]
+}
