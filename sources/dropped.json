@@ -8,11 +8,7 @@
         "tag": "latest"
     },
     {
-        "url": "https://raw.githubusercontent.com/indrastorms/dropped-patches/main/dropped-patches-bundle.json"
-    },
-    {
-        "user": "revanced",
-        "repo": "revanced-integrations",
-        "tag": "latest"
+        "user": "indrastorms",
+        "repo": "Dropped-Patches",
     }
 ]
