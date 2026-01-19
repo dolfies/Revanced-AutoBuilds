@@ -25,6 +25,7 @@
     { "app_name": "viber", "source": "revanced" },
     { "app_name": "threads", "source": "revanced"},
     { "app_name": "crunchyroll", "source": "revanced" },
-    { "app_name": "tasker", "source": "dropped" }
+    { "app_name": "tasker", "source": "dropped" },
+    { "app_name": "icon-pack-studio", "source": "revanced" }
   ]
 }
