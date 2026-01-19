@@ -27,6 +27,18 @@
     { "app_name": "crunchyroll", "source": "revanced" },
     { "app_name": "tasker", "source": "dropped" },
     { "app_name": "icon-pack-studio", "source": "revanced" },
-    { "app_name": "my-expenses", "source": "revanced" }
+    { "app_name": "my-expenses", "source": "revanced" },
+    { "app_name": "avocards", "source": "custom-patches" },
+    { "app_name": "cake", "source": "custom-patches" },
+    { "app_name": "dailypay", "source": "custom-patches" },
+    { "app_name": "cake", "source": "custom-patches" },
+    { "app_name": "eggbun", "source": "custom-patches" },
+    { "app_name": "guess-the-country", "source": "custom-patches" },
+    { "app_name": "lingory", "source": "custom-patches" },
+    { "app_name": "my-expenses", "source": "custom-patches" },
+    { "app_name": "teuida", "source": "custom-patches" },
+    { "app_name": "ttmik-stories", "source": "custom-patches" },
+    { "app_name": "webster", "source": "custom-patches" }
+    
   ]
 }
