@@ -3,7 +3,7 @@
     "name": "transit-real-time-transit-app",
     "type": "APK", 
     "arch": "universal",
-    "dpi": "	120-640dpi",
+    "dpi": "120-640dpi",
     "package" : "com.thetransitapp.droid",
     "version" : ""
 }
