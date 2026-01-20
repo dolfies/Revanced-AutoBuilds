@@ -1,0 +1,9 @@
+{ 
+  "org": "trakt", 
+  "name": "trakt",
+  "type": "APK",
+  "arch": "",
+  "dpi":"nodpi",
+  "package": "tv.trakt.trakt",
+  "version": ""
+}
