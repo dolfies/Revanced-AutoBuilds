@@ -7,6 +7,17 @@
 [![Python Version](https://img.shields.io/badge/Python-3.11%2B-blue?style=for-the-badge&logo=python&logoColor=white)](https://www.python.org/)
 [![License](https://img.shields.io/github/license/RookieEnough/Revanced-AutoBuilds?style=for-the-badge&color=orange)](LICENSE)
 
+
+<div align="center">
+  <a href="https://rookiezz.gumroad.com/l/hrpyb">
+    <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Coin.png" alt="Coin" width="40" height="40" />
+    <br>
+    <img src="https://img.shields.io/badge/Support_Project-Gold?style=for-the-badge&logoColor=black&labelColor=white" alt="Support Badge" />
+  </a>
+</div>
+
+
+
 <p align="center">
   <strong>Professional, Automated ReVanced APK Builder</strong><br>
   Multi-source • Multi-architecture • GitHub Actions Powered
