@@ -1,15 +1,4 @@
-[
-    {
-        "name": "lennyRBLX"
-    },
-    {
-        "user": "revanced",
-        "repo": "revanced-cli",
-        "tag": "latest"
-    },
-    {
-        "user": "lennyRBLX",
-        "repo": "apk-patches",
-        "tag": "dev"
-    }
-]
+{
+  "name": "LennyRBLX-Patches-Bundle",
+  "bundle_url": "https://raw.githubusercontent.com/Jman-Github/ReVanced-Patch-Bundles/bundles/patch-bundles/lennyRBLX-patch-bundles/lennyRBLX-stable-patches-bundle.json"
+}
