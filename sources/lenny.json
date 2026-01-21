@@ -1,0 +1,15 @@
+[
+    {
+        "name": "lennyRBLX"
+    },
+    {
+        "user": "revanced",
+        "repo": "revanced-cli",
+        "tag": "latest"
+    },
+    {
+        "user": "lennyRBLX",
+        "repo": "apk-patches",
+        "tag": "dev"
+    }
+]
