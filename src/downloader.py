@@ -6,6 +6,7 @@ from src import (
     apkpure,
     session,
     uptodown,
+    aptoide
     apkmirror
 )
 
@@ -86,6 +87,9 @@ def download_apkmirror(app_name: str, cli: str, patches: str, arch: str = None) 
 
 def download_apkpure(app_name: str, cli: str, patches: str, arch: str = None) -> tuple[Path | None, str | None]:
     return download_platform(app_name, "apkpure", cli, patches, arch)
+
+def download_aptoide(app_name: str, cli: str, patches: str, arch: str = None) -> tuple[Path | None, str | None]:
+    return download_platform(app_name, "aptoide", cli, patches, arch)
 
 def download_uptodown(app_name: str, cli: str, patches: str, arch: str = None) -> tuple[Path | None, str | None]:
     return download_platform(app_name, "uptodown", cli, patches, arch)
