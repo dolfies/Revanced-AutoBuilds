@@ -1,0 +1,15 @@
+[
+    {
+        "name": "mirai-patches"
+    },
+    {
+        "user": "inotia00",
+        "repo": "revanced-cli",
+        "tag": "latest"
+    },
+    {
+        "user": "baongoquoc2011",
+        "repo": "mirai",
+        "tag": "latest"
+    }
+]
