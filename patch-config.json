@@ -48,7 +48,10 @@
     { "app_name": "kicker", "source": "tosox" },
     { "app_name": "ticktick", "source": "tosox" },
     { "app_name": "splitwise", "source": "burgers" },
-    { "app_name": "ticktick", "source": "tosox" },
+    { "app_name": "trakt", "source": "tosox" },
+    { "app_name": "letterbox", "source": "ample" },
+    { "app_name": "kakaotalk", "source": "ample" },
+    { "app_name": "mladinska", "source": "blazskufca" },
     { "app_name": "fxfile", "source": "dropped" },
     { "app_name": "dialer", "source": "taknok" }
     
