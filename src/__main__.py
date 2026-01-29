@@ -15,8 +15,43 @@ def run_build(app_name: str, source: str, arch: str = "universal") -> str:
     """Build APK for specific architecture"""
     download_files, name = downloader.download_required(source)
 
-    revanced_cli = utils.find_file(download_files, 'revanced-cli', '.jar')
-    revanced_patches = utils.find_file(download_files, 'patches', '.rvp')
+    # Log downloaded files for debugging
+    logging.info(f"📦 Downloaded {len(download_files)} files for {source}:")
+    for file in download_files:
+        logging.info(f"  - {file.name} ({file.stat().st_size} bytes)")
+
+    # DETECT SOURCE TYPE AND FIND FILES
+    is_morphe = source == "morphe" or "morphe" in source.lower()
+    
+    if is_morphe:
+        # Find Morphe files
+        cli = utils.find_file(download_files, contains="morphe-cli", suffix=".jar")
+        patches = utils.find_file(download_files, contains="patches", suffix=".mpp")
+        
+        if not cli:
+            # Fallback: any jar with "morphe" in name
+            cli = utils.find_file(download_files, contains="morphe", suffix=".jar")
+    else:
+        # Find ReVanced files
+        cli = utils.find_file(download_files, contains="revanced-cli", suffix=".jar")
+        patches = utils.find_file(download_files, contains="patches", suffix=".rvp")
+        
+        if not patches:
+            # Try .jar extension for patches
+            patches = utils.find_file(download_files, contains="patches", suffix=".jar")
+
+    # Validate tools
+    if not cli:
+        logging.error(f"❌ CLI not found for source: {source}")
+        logging.error(f"Available files: {[f.name for f in download_files]}")
+        return None
+    if not patches:
+        logging.error(f"❌ Patches not found for source: {source}")
+        logging.error(f"Available files: {[f.name for f in download_files]}")
+        return None
+
+    logging.info(f"✅ Using CLI: {cli.name}")
+    logging.info(f"✅ Using patches: {patches.name}")
 
     download_methods = [
         downloader.download_apkmirror,
@@ -28,7 +63,7 @@ def run_build(app_name: str, source: str, arch: str = "universal") -> str:
     input_apk = None
     version = None
     for method in download_methods:
-        input_apk, version = method(app_name, revanced_cli, revanced_patches)
+        input_apk, version = method(app_name, str(cli), str(patches))
         if input_apk:
             break
             
@@ -113,12 +148,39 @@ def run_build(app_name: str, source: str, arch: str = "universal") -> str:
     # Include architecture in output filename
     output_apk = Path(f"{app_name}-{arch}-patch-v{version}.apk")
 
-    utils.run_process([
-        "java", "-jar", str(revanced_cli),
-        "patch", "--patches", str(revanced_patches),
-        "--out", str(output_apk), str(input_apk),
-        *exclude_patches, *include_patches
-    ], stream=True)
+    # USE DIFFERENT COMMANDS BASED ON SOURCE TYPE
+    if is_morphe:
+        logging.info("🔧 Using Morphe patching system...")
+        # Morphe CLI might have different arguments - we need to test this
+        # Try common patterns
+        try:
+            # Try ReVanced-style arguments first (most likely)
+            morphe_cmd = [
+                "java", "-jar", str(cli),
+                "patch", "--patches", str(patches),
+                "--out", str(output_apk), str(input_apk),
+                *exclude_patches, *include_patches
+            ]
+            utils.run_process(morphe_cmd, stream=True)
+        except subprocess.CalledProcessError:
+            # Try alternative Morphe arguments
+            logging.info("Trying alternative Morphe command format...")
+            morphe_cmd = [
+                "java", "-jar", str(cli),
+                "--patches", str(patches),
+                "--input", str(input_apk),
+                "--output", str(output_apk)
+            ]
+            utils.run_process(morphe_cmd, stream=True)
+    else:
+        logging.info("🔧 Using ReVanced patching system...")
+        # Standard ReVanced command
+        utils.run_process([
+            "java", "-jar", str(cli),
+            "patch", "--patches", str(patches),
+            "--out", str(output_apk), str(input_apk),
+            *exclude_patches, *include_patches
+        ], stream=True)
 
     input_apk.unlink(missing_ok=True)
 
